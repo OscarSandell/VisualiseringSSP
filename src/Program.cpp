@@ -3,10 +3,8 @@
 #include "Graph.h"
 #include "Program.h"
 
-
 Program::Program()
 {
-
 }
 
 void Program::run()
@@ -15,13 +13,23 @@ void Program::run()
     double const fps{60.0};
     while (window.isOpen())
     {
-        //current_state->update();
-        //current_state->draw();
+        // current_state->update();
+        // current_state->draw();
         window.display();
-        //set_state(state_machine.get_state());
+        // set_state(state_machine.get_state());
+        sf::Event event;
+        // hÃ¤mta ett event i taget
+        while (window.pollEvent(event))
+        {
+
+            if (event.type == sf::Event::Closed)
+            {
+                window.close();
+            }
+        }
+        // har en mus-knapp tryckts?
         print_titlebar(clock, fps);
     }
-    
 }
 
 void Program::print_titlebar(sf::Clock &clck, double const &fps)
@@ -32,6 +40,5 @@ void Program::print_titlebar(sf::Clock &clck, double const &fps)
     sleep(sf::milliseconds(1000.0 / fps) - clck.getElapsedTime());
     clck.restart();
 }
-
 
 sf::RenderWindow Program::window{sf::VideoMode{1920, 1080}, "Visualisering", sf::Style::Default};
