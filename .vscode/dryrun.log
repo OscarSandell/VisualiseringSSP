@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/oscar/Programmering/VisualiseringSSP'
+mkdir -p build
+g++ -std=c++17 -Wall -Wextra -pedantic -Weffc++ -Wold-style-cast -Woverloaded-virtual -fmax-errors=3 -g -pg -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lyaml-cpp -lstdc++fs -c -o build/Program.o src/Program.cpp
+mkdir -p build
+g++ -std=c++17 -Wall -Wextra -pedantic -Weffc++ -Wold-style-cast -Woverloaded-virtual -fmax-errors=3 -g -pg -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lyaml-cpp -lstdc++fs -c -o build/Graph.o src/Graph.cpp
+mkdir -p build
+g++ -std=c++17 -Wall -Wextra -pedantic -Weffc++ -Wold-style-cast -Woverloaded-virtual -fmax-errors=3 -g -pg -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lyaml-cpp -lstdc++fs -c -o build/main.o src/main.cpp
+g++ -std=c++17 -Wall -Wextra -pedantic -Weffc++ -Wold-style-cast -Woverloaded-virtual -fmax-errors=3 -g -pg build/Program.o build/Graph.o build/main.o -o program -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lyaml-cpp -lstdc++fs
+make: Leaving directory '/home/oscar/Programmering/VisualiseringSSP'
+ 
